@@ -86,9 +86,29 @@ function playRound()
     }
 }
 
+function playGame(rounds)
+{
+    for (let i = 0; i < rounds; i++)
+    {
+        console.log("ROUND " + (i + 1))
+        playRound();
+        console.log("SCORES: YOU: " + humanScore + " AI: " + computerScore)
+    }
+    if (humanScore > computerScore)
+    {
+        console.log("Congrats! you won the game!");
+    }
+    else if (humanScore < computerScore)
+    {
+        console.log("Aww.. you lost the game :(");
+    }
+    else
+    {
+        console.log("TIE!");
+    }
+}
+
 let humanScore = 0;
 let computerScore = 0;
 
-playRound();
-console.log(humanScore);
-console.log(computerScore);
+playGame(5);
