@@ -19,20 +19,6 @@ function getComputerChoice()
     return res;
 }
 
-function getHumanChoice() 
-{
-    let choice = prompt("rock, paper or scissors?: ").toLowerCase();
-    console.log(choice);   
-
-    while (choice !== "rock" && choice !== "paper" && choice !== "scissors") 
-    {
-        choice = prompt("ERROR input has to be rock, paper or scissors: ").toLowerCase();
-        console.log(choice);
-    }
-
-    return choice;
-}
-
 function playRound(humanChoice)
 {
     const computerChoice = getComputerChoice();
