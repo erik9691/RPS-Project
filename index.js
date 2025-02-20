@@ -16,8 +16,6 @@ function getComputerChoice()
         res = "scissors"
     }
 
-    console.log(res);
-
     return res;
 }
 
@@ -35,10 +33,12 @@ function getHumanChoice()
     return choice;
 }
 
-function playRound()
+function playRound(humanChoice)
 {
-    const humanChoice = getHumanChoice();
     const computerChoice = getComputerChoice();
+
+    console.log("Your choice: " + humanChoice);
+    console.log("AI's choice: " + computerChoice);
 
     if (humanChoice === "rock" && computerChoice === "scissors")
     {
@@ -111,4 +111,13 @@ function playGame(rounds)
 let humanScore = 0;
 let computerScore = 0;
 
-playGame(5);
+const buttons = document.querySelectorAll("button");
+console.log(buttons);
+
+buttons.forEach((button) =>
+{
+    button.addEventListener("click", function (e)
+    {
+        playRound(e.target.className);
+    });
+});
