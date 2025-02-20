@@ -82,30 +82,20 @@ function playRound(humanChoice)
         computerScore++;
     }
 
+    if (humanScore >= 5)
+    {
+        winMessage.innerText = "Congrats! you won the game!";
+        humanScore = 0;
+        computerScore = 0;
+    }
+    else if (computerScore >= 5)
+    {
+        winMessage.innerText = "Aww.. you lost the game :(";
+        humanScore = 0;
+        computerScore = 0;
+    }
     humanScoreHTML.innerText = humanScore;
     computerScoreHTML.innerText = computerScore;
-}
-
-function playGame(rounds)
-{
-    for (let i = 0; i < rounds; i++)
-    {
-        console.log("ROUND " + (i + 1))
-        playRound();
-        console.log("SCORES: YOU: " + humanScore + " AI: " + computerScore)
-    }
-    if (humanScore > computerScore)
-    {
-        console.log("Congrats! you won the game!");
-    }
-    else if (humanScore < computerScore)
-    {
-        console.log("Aww.. you lost the game :(");
-    }
-    else
-    {
-        console.log("TIE!");
-    }
 }
 
 let humanScore = 0;
